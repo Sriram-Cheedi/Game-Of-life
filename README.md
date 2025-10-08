@@ -1,1 +1,1 @@
-# Game-Of-life
+# Game-Of-life Coursework
