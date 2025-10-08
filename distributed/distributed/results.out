@@ -1,0 +1,515 @@
+SIGQUIT: quit
+PC=0x483b21 m=0 sigcode=0
+
+goroutine 0 [idle]:
+runtime.futex()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/sys_linux_amd64.s:554 +0x21 fp=0x7ffe233c1260 sp=0x7ffe233c1258 pc=0x483b21
+runtime.futexsleep(0x87cfa0?, 0x34000?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/os_linux.go:69 +0x36 fp=0x7ffe233c12b0 sp=0x7ffe233c1260 pc=0x449136
+runtime.notesleep(0x87d0e8)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/lock_futex.go:160 +0x87 fp=0x7ffe233c12e8 sp=0x7ffe233c12b0 pc=0x422367
+runtime.mPark()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:1531 +0x25 fp=0x7ffe233c1308 sp=0x7ffe233c12e8 pc=0x452785
+runtime.stoplockedm()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:2579 +0x65 fp=0x7ffe233c1358 sp=0x7ffe233c1308 pc=0x454525
+runtime.schedule()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:3357 +0x3d fp=0x7ffe233c1390 sp=0x7ffe233c1358 pc=0x4562dd
+runtime.park_m(0xc0000061a0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:3529 +0x12d fp=0x7ffe233c13c0 sp=0x7ffe233c1390 pc=0x45686d
+runtime.mcall()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:452 +0x43 fp=0x7ffe233c13d0 sp=0x7ffe233c13c0 pc=0x47fa03
+
+goroutine 1 [chan receive, 10 minutes, locked to thread]:
+runtime.gopark(0xc0000ffd88?, 0x423b8a?, 0x0?, 0xde?, 0xc0000ffda0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc000082d20 sp=0xc000082d00 pc=0x44fd96
+runtime.chanrecv(0xc00009a070, 0xc0000ffe18, 0x1)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/chan.go:583 +0x49d fp=0xc000082db0 sp=0xc000082d20 pc=0x41d13d
+runtime.chanrecv1(0xc00009e180?, 0x1?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/chan.go:442 +0x18 fp=0xc000082dd8 sp=0xc000082db0 pc=0x41cc38
+uk.ac.bris.cs/gameoflife.TestMain(0xc000032fa0)
+	/home/kevin/Extensions/CSA-Game-of-Life/distributed/main_test.go:63 +0x229 fp=0xc000082ec8 sp=0xc000082dd8 pc=0x614f29
+main.main()
+	_testmain.go:61 +0x1d3 fp=0xc000082f80 sp=0xc000082ec8 pc=0x61ac53
+runtime.main()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:250 +0x207 fp=0xc000082fe0 sp=0xc000082f80 pc=0x44f967
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc000082fe8 sp=0xc000082fe0 pc=0x481c41
+
+goroutine 2 [force gc (idle), 3 minutes]:
+runtime.gopark(0x1c06eafc8a02?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc000070fb0 sp=0xc000070f90 pc=0x44fd96
+runtime.goparkunlock(...)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:387
+runtime.forcegchelper()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:305 +0xb0 fp=0xc000070fe0 sp=0xc000070fb0 pc=0x44fbd0
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc000070fe8 sp=0xc000070fe0 pc=0x481c41
+created by runtime.init.6
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:293 +0x25
+
+goroutine 3 [GC sweep wait]:
+runtime.gopark(0x1?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc000071780 sp=0xc000071760 pc=0x44fd96
+runtime.goparkunlock(...)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:387
+runtime.bgsweep(0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgcsweep.go:319 +0xde fp=0xc0000717c8 sp=0xc000071780 pc=0x43a4be
+runtime.gcenable.func1()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:178 +0x26 fp=0xc0000717e0 sp=0xc0000717c8 pc=0x42f726
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc0000717e8 sp=0xc0000717e0 pc=0x481c41
+created by runtime.gcenable
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:178 +0x6b
+
+goroutine 4 [GC scavenge wait]:
+runtime.gopark(0x1c06eb9837ab?, 0x317d6e?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc000071f70 sp=0xc000071f50 pc=0x44fd96
+runtime.goparkunlock(...)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:387
+runtime.(*scavengerState).park(0x87c840)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgcscavenge.go:400 +0x53 fp=0xc000071fa0 sp=0xc000071f70 pc=0x438393
+runtime.bgscavenge(0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgcscavenge.go:633 +0x65 fp=0xc000071fc8 sp=0xc000071fa0 pc=0x438985
+runtime.gcenable.func2()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:179 +0x26 fp=0xc000071fe0 sp=0xc000071fc8 pc=0x42f6c6
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc000071fe8 sp=0xc000071fe0 pc=0x481c41
+created by runtime.gcenable
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:179 +0xaa
+
+goroutine 5 [finalizer wait, 10 minutes]:
+runtime.gopark(0x1a0?, 0x87cfa0?, 0x60?, 0x78?, 0xc000070770?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc000070628 sp=0xc000070608 pc=0x44fd96
+runtime.runfinq()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mfinal.go:193 +0x107 fp=0xc0000707e0 sp=0xc000070628 pc=0x42e767
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc0000707e8 sp=0xc0000707e0 pc=0x481c41
+created by runtime.createfing
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mfinal.go:163 +0x45
+
+goroutine 6 [chan receive, 10 minutes]:
+runtime.gopark(0xc000085960?, 0x0?, 0x4?, 0x0?, 0xc000085988?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc000085908 sp=0xc0000858e8 pc=0x44fd96
+runtime.chanrecv(0xc00002e1e0, 0x0, 0x1)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/chan.go:583 +0x49d fp=0xc000085998 sp=0xc000085908 pc=0x41d13d
+runtime.chanrecv1(0x4233fe?, 0x7fb33011b0e8?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/chan.go:442 +0x18 fp=0xc0000859c0 sp=0xc000085998 pc=0x41cc38
+testing.(*B).run1(0xc00013e280)
+	/home/kevin/.gvm/gos/go1.20.6/src/testing/benchmark.go:235 +0xb2 fp=0xc000085aa0 sp=0xc0000859c0 pc=0x4f50d2
+testing.(*B).Run(0xc00013e000, {0x691efe?, 0x0?}, 0x6be768)
+	/home/kevin/.gvm/gos/go1.20.6/src/testing/benchmark.go:700 +0x4e5 fp=0xc000085ba0 sp=0xc000085aa0 pc=0x4f7d65
+testing.runBenchmarks.func1(0xc00013e000?)
+	/home/kevin/.gvm/gos/go1.20.6/src/testing/benchmark.go:561 +0x45 fp=0xc000085bf0 sp=0xc000085ba0 pc=0x4f6dc5
+testing.(*B).runN(0xc00013e000, 0x1)
+	/home/kevin/.gvm/gos/go1.20.6/src/testing/benchmark.go:193 +0x102 fp=0xc000085c68 sp=0xc000085bf0 pc=0x4f4ea2
+testing.runBenchmarks({0x696b94, 0x18}, 0x0?, {0x83e330, 0x1, 0x0?})
+	/home/kevin/.gvm/gos/go1.20.6/src/testing/benchmark.go:570 +0x638 fp=0xc000085d68 sp=0xc000085c68 pc=0x4f6cf8
+testing.(*M).Run(0xc000032fa0)
+	/home/kevin/.gvm/gos/go1.20.6/src/testing/testing.go:1923 +0x971 fp=0xc000085fb0 sp=0xc000085d68 pc=0x5031b1
+uk.ac.bris.cs/gameoflife.TestMain.func1()
+	/home/kevin/Extensions/CSA-Game-of-Life/distributed/main_test.go:28 +0x26 fp=0xc000085fe0 sp=0xc000085fb0 pc=0x615126
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc000085fe8 sp=0xc000085fe0 pc=0x481c41
+created by uk.ac.bris.cs/gameoflife.TestMain
+	/home/kevin/Extensions/CSA-Game-of-Life/distributed/main_test.go:30 +0x20e
+
+goroutine 18 [GC worker (idle), 10 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc000072750 sp=0xc000072730 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc0000727e0 sp=0xc000072750 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc0000727e8 sp=0xc0000727e0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 34 [GC worker (idle), 10 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc00006c750 sp=0xc00006c730 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc00006c7e0 sp=0xc00006c750 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc00006c7e8 sp=0xc00006c7e0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 19 [GC worker (idle), 10 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc00014e750 sp=0xc00014e730 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc00014e7e0 sp=0xc00014e750 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc00014e7e8 sp=0xc00014e7e0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 7 [GC worker (idle), 10 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc000072f50 sp=0xc000072f30 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc000072fe0 sp=0xc000072f50 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc000072fe8 sp=0xc000072fe0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 20 [GC worker (idle), 10 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc00014ef50 sp=0xc00014ef30 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc00014efe0 sp=0xc00014ef50 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc00014efe8 sp=0xc00014efe0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 21 [GC worker (idle), 10 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc00014f750 sp=0xc00014f730 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc00014f7e0 sp=0xc00014f750 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc00014f7e8 sp=0xc00014f7e0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 22 [GC worker (idle), 10 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc00014ff50 sp=0xc00014ff30 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc00014ffe0 sp=0xc00014ff50 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc00014ffe8 sp=0xc00014ffe0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 8 [GC worker (idle), 10 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc000073750 sp=0xc000073730 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc0000737e0 sp=0xc000073750 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc0000737e8 sp=0xc0000737e0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 23 [GC worker (idle), 10 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc000150750 sp=0xc000150730 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc0001507e0 sp=0xc000150750 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc0001507e8 sp=0xc0001507e0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 35 [GC worker (idle), 10 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc00006cf50 sp=0xc00006cf30 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc00006cfe0 sp=0xc00006cf50 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc00006cfe8 sp=0xc00006cfe0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 36 [GC worker (idle), 10 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc00006d750 sp=0xc00006d730 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc00006d7e0 sp=0xc00006d750 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc00006d7e8 sp=0xc00006d7e0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 9 [GC worker (idle), 10 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc000073f50 sp=0xc000073f30 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc000073fe0 sp=0xc000073f50 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc000073fe8 sp=0xc000073fe0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 10 [GC worker (idle), 10 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc00014a750 sp=0xc00014a730 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc00014a7e0 sp=0xc00014a750 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc00014a7e8 sp=0xc00014a7e0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 11 [GC worker (idle), 10 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc00014af50 sp=0xc00014af30 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc00014afe0 sp=0xc00014af50 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc00014afe8 sp=0xc00014afe0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 24 [GC worker (idle), 10 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc000150f50 sp=0xc000150f30 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc000150fe0 sp=0xc000150f50 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc000150fe8 sp=0xc000150fe0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 12 [GC worker (idle), 3 minutes]:
+runtime.gopark(0x1beafa53837d?, 0x1?, 0x4f?, 0x55?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc00014b750 sp=0xc00014b730 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc00014b7e0 sp=0xc00014b750 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc00014b7e8 sp=0xc00014b7e0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 37 [GC worker (idle), 3 minutes]:
+runtime.gopark(0x8abea0?, 0x1?, 0x36?, 0xb5?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc00006df50 sp=0xc00006df30 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc00006dfe0 sp=0xc00006df50 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc00006dfe8 sp=0xc00006dfe0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 38 [GC worker (idle), 9 minutes]:
+runtime.gopark(0x8abea0?, 0x1?, 0x4a?, 0x8?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc00006e750 sp=0xc00006e730 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc00006e7e0 sp=0xc00006e750 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc00006e7e8 sp=0xc00006e7e0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 50 [GC worker (idle), 9 minutes]:
+runtime.gopark(0x1b96ab7437b3?, 0x1?, 0x30?, 0xdf?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc000286750 sp=0xc000286730 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc0002867e0 sp=0xc000286750 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc0002867e8 sp=0xc0002867e0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 25 [GC worker (idle), 3 minutes]:
+runtime.gopark(0x1c06eb025b3c?, 0x1?, 0xd9?, 0x6?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc000151750 sp=0xc000151730 pc=0x44fd96
+runtime.gcBgMarkWorker()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1275 +0xf1 fp=0xc0001517e0 sp=0xc000151750 pc=0x431491
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc0001517e8 sp=0xc0001517e0 pc=0x481c41
+created by runtime.gcBgMarkStartWorkers
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/mgc.go:1199 +0x25
+
+goroutine 13 [chan receive, 10 minutes]:
+runtime.gopark(0xc000081c50?, 0x0?, 0x6?, 0x0?, 0xc000081c78?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc000081bf8 sp=0xc000081bd8 pc=0x44fd96
+runtime.chanrecv(0xc00002e240, 0x0, 0x1)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/chan.go:583 +0x49d fp=0xc000081c88 sp=0xc000081bf8 pc=0x41d13d
+runtime.chanrecv1(0x4233fe?, 0x7fb33011b0e8?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/chan.go:442 +0x18 fp=0xc000081cb0 sp=0xc000081c88 pc=0x41cc38
+testing.(*B).run1(0xc00013e500)
+	/home/kevin/.gvm/gos/go1.20.6/src/testing/benchmark.go:235 +0xb2 fp=0xc000081d90 sp=0xc000081cb0 pc=0x4f50d2
+testing.(*B).Run(0xc00013e280, {0xc000110040?, 0xc000081ed8?}, 0xc000026300)
+	/home/kevin/.gvm/gos/go1.20.6/src/testing/benchmark.go:700 +0x4e5 fp=0xc000081e90 sp=0xc000081d90 pc=0x4f7d65
+uk.ac.bris.cs/gameoflife.BenchmarkGol(0xc00013e280?)
+	/home/kevin/Extensions/CSA-Game-of-Life/distributed/my_benchmark_test.go:22 +0x132 fp=0xc000081f28 sp=0xc000081e90 pc=0x6152f2
+testing.(*B).runN(0xc00013e280, 0x1)
+	/home/kevin/.gvm/gos/go1.20.6/src/testing/benchmark.go:193 +0x102 fp=0xc000081fa0 sp=0xc000081f28 pc=0x4f4ea2
+testing.(*B).run1.func1()
+	/home/kevin/.gvm/gos/go1.20.6/src/testing/benchmark.go:233 +0x59 fp=0xc000081fe0 sp=0xc000081fa0 pc=0x4f5539
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc000081fe8 sp=0xc000081fe0 pc=0x481c41
+created by testing.(*B).run1
+	/home/kevin/.gvm/gos/go1.20.6/src/testing/benchmark.go:226 +0x9c
+
+goroutine 26 [chan receive, 9 minutes]:
+runtime.gopark(0xc000122060?, 0xc00009e720?, 0xa0?, 0xbe?, 0xc00014be80?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc00014be10 sp=0xc00014bdf0 pc=0x44fd96
+runtime.chanrecv(0xc00002e2a0, 0xc00014bf08, 0x1)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/chan.go:583 +0x49d fp=0xc00014bea0 sp=0xc00014be10 pc=0x41d13d
+runtime.chanrecv2(0xc000074800?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/chan.go:447 +0x18 fp=0xc00014bec8 sp=0xc00014bea0 pc=0x41cc78
+uk.ac.bris.cs/gameoflife.BenchmarkGol.func1(0xc00013e500)
+	/home/kevin/Extensions/CSA-Game-of-Life/distributed/my_benchmark_test.go:26 +0x116 fp=0xc00014bf28 sp=0xc00014bec8 pc=0x615476
+testing.(*B).runN(0xc00013e500, 0x1)
+	/home/kevin/.gvm/gos/go1.20.6/src/testing/benchmark.go:193 +0x102 fp=0xc00014bfa0 sp=0xc00014bf28 pc=0x4f4ea2
+testing.(*B).run1.func1()
+	/home/kevin/.gvm/gos/go1.20.6/src/testing/benchmark.go:233 +0x59 fp=0xc00014bfe0 sp=0xc00014bfa0 pc=0x4f5539
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc00014bfe8 sp=0xc00014bfe0 pc=0x481c41
+created by testing.(*B).run1
+	/home/kevin/.gvm/gos/go1.20.6/src/testing/benchmark.go:226 +0x9c
+
+goroutine 14 [chan receive, 9 minutes]:
+runtime.gopark(0xc00009eae0?, 0xc000122120?, 0x40?, 0xf0?, 0xc0000ddb50?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc0000ddae8 sp=0xc0000ddac8 pc=0x44fd96
+runtime.chanrecv(0xc00019e060, 0x0, 0x1)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/chan.go:583 +0x49d fp=0xc0000ddb78 sp=0xc0000ddae8 pc=0x41d13d
+runtime.chanrecv1(0x690804?, 0x8?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/chan.go:442 +0x18 fp=0xc0000ddba0 sp=0xc0000ddb78 pc=0x41cc38
+uk.ac.bris.cs/gameoflife/gol.distributor({0x0?, 0x0?, 0x0?, 0x0?}, {0xc00002e2a0, 0xc00002e300, 0xc00002e360, 0xc00002e3c0, 0xc00002e420, 0xc00002e480, ...})
+	/home/kevin/Extensions/CSA-Game-of-Life/distributed/gol/distributor.go:186 +0xe1d fp=0xc0000dde60 sp=0xc0000ddba0 pc=0x604a1d
+uk.ac.bris.cs/gameoflife/gol.Run({0x0?, 0x0?, 0x0?, 0x0?}, 0xc00002e2a0, 0x0)
+	/home/kevin/Extensions/CSA-Game-of-Life/distributed/gol/gol.go:41 +0x2bb fp=0xc0000ddfa0 sp=0xc0000dde60 pc=0x60681b
+uk.ac.bris.cs/gameoflife.BenchmarkGol.func1.1()
+	/home/kevin/Extensions/CSA-Game-of-Life/distributed/my_benchmark_test.go:25 +0x39 fp=0xc0000ddfe0 sp=0xc0000ddfa0 pc=0x6154d9
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc0000ddfe8 sp=0xc0000ddfe0 pc=0x481c41
+created by uk.ac.bris.cs/gameoflife.BenchmarkGol.func1
+	/home/kevin/Extensions/CSA-Game-of-Life/distributed/my_benchmark_test.go:25 +0xef
+
+goroutine 15 [chan receive, 9 minutes]:
+runtime.gopark(0x1ff?, 0x1ff?, 0xff?, 0x1?, 0x1ff?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc000083e10 sp=0xc000083df0 pc=0x44fd96
+runtime.chanrecv(0xc00002e300, 0xc000083edf, 0x1)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/chan.go:583 +0x49d fp=0xc000083ea0 sp=0xc000083e10 pc=0x41d13d
+runtime.chanrecv2(0xc000083ee8?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/chan.go:447 +0x18 fp=0xc000083ec8 sp=0xc000083ea0 pc=0x41cc78
+uk.ac.bris.cs/gameoflife/gol.startIo({0x0?, 0x0?, 0x0?, 0x0?}, {0xc00002e300, 0xc00002e360, 0xc00002e3c0, 0xc00002e420, 0xc00002e480})
+	/home/kevin/Extensions/CSA-Game-of-Life/distributed/gol/io.go:134 +0x112 fp=0xc000083f88 sp=0xc000083ec8 pc=0x607412
+uk.ac.bris.cs/gameoflife/gol.Run.func1()
+	/home/kevin/Extensions/CSA-Game-of-Life/distributed/gol/gol.go:30 +0x46 fp=0xc000083fe0 sp=0xc000083f88 pc=0x6068c6
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc000083fe8 sp=0xc000083fe0 pc=0x481c41
+created by uk.ac.bris.cs/gameoflife/gol.Run
+	/home/kevin/Extensions/CSA-Game-of-Life/distributed/gol/gol.go:30 +0x1de
+
+goroutine 27 [IO wait, 9 minutes]:
+runtime.gopark(0x7fb358cab7e8?, 0xb?, 0x0?, 0x0?, 0x6?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc0000dfa68 sp=0xc0000dfa48 pc=0x44fd96
+runtime.netpollblock(0x48cde5?, 0x419a0f?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/netpoll.go:527 +0xf7 fp=0xc0000dfaa0 sp=0xc0000dfa68 pc=0x448457
+internal/poll.runtime_pollWait(0x7fb33006ffa8, 0x72)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/netpoll.go:306 +0x89 fp=0xc0000dfac0 sp=0xc0000dfaa0 pc=0x47c6a9
+internal/poll.(*pollDesc).wait(0xc000180000?, 0xc00016b000?, 0x0)
+	/home/kevin/.gvm/gos/go1.20.6/src/internal/poll/fd_poll_runtime.go:84 +0x32 fp=0xc0000dfae8 sp=0xc0000dfac0 pc=0x4a9572
+internal/poll.(*pollDesc).waitRead(...)
+	/home/kevin/.gvm/gos/go1.20.6/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc000180000, {0xc00016b000, 0x1000, 0x1000})
+	/home/kevin/.gvm/gos/go1.20.6/src/internal/poll/fd_unix.go:167 +0x299 fp=0xc0000dfb80 sp=0xc0000dfae8 pc=0x4aa0d9
+net.(*netFD).Read(0xc000180000, {0xc00016b000?, 0x63e5e0?, 0xc0000d4488?})
+	/home/kevin/.gvm/gos/go1.20.6/src/net/fd_posix.go:55 +0x29 fp=0xc0000dfbc8 sp=0xc0000dfb80 pc=0x58b269
+net.(*conn).Read(0xc000014008, {0xc00016b000?, 0xc0000d4480?, 0xc0000dfc80?})
+	/home/kevin/.gvm/gos/go1.20.6/src/net/net.go:183 +0x45 fp=0xc0000dfc10 sp=0xc0000dfbc8 pc=0x596025
+net.(*TCPConn).Read(0xc0000904c0?, {0xc00016b000?, 0x671a40?, 0xc0000d4480?})
+	<autogenerated>:1 +0x29 fp=0xc0000dfc40 sp=0xc0000dfc10 pc=0x5a0ca9
+bufio.(*Reader).Read(0xc00009e5a0, {0xc00016e000, 0x1, 0xc0000dfd70?})
+	/home/kevin/.gvm/gos/go1.20.6/src/bufio/bufio.go:237 +0x1bb fp=0xc0000dfc78 sp=0xc0000dfc40 pc=0x50737b
+io.ReadAtLeast({0x6f9e80, 0xc00009e5a0}, {0xc00016e000, 0x1, 0x9}, 0x1)
+	/home/kevin/.gvm/gos/go1.20.6/src/io/io.go:332 +0x9a fp=0xc0000dfcc0 sp=0xc0000dfc78 pc=0x4a617a
+io.ReadFull(...)
+	/home/kevin/.gvm/gos/go1.20.6/src/io/io.go:351
+encoding/gob.decodeUintReader({0x6f9e80?, 0xc00009e5a0?}, {0xc00016e000?, 0x9?, 0x9?})
+	/home/kevin/.gvm/gos/go1.20.6/src/encoding/gob/decode.go:116 +0x57 fp=0xc0000dfd18 sp=0xc0000dfcc0 pc=0x554837
+encoding/gob.(*Decoder).recvMessage(0xc00016c000)
+	/home/kevin/.gvm/gos/go1.20.6/src/encoding/gob/decoder.go:82 +0x39 fp=0xc0000dfd50 sp=0xc0000dfd18 pc=0x55e3f9
+encoding/gob.(*Decoder).decodeTypeSequence(0xc00016c000, 0x0)
+	/home/kevin/.gvm/gos/go1.20.6/src/encoding/gob/decoder.go:148 +0x4f fp=0xc0000dfd80 sp=0xc0000dfd50 pc=0x55e78f
+encoding/gob.(*Decoder).DecodeValue(0xc00016c000, {0x637000?, 0xc00011c0f0?, 0x7fb33011b9a8?})
+	/home/kevin/.gvm/gos/go1.20.6/src/encoding/gob/decoder.go:227 +0x18f fp=0xc0000dfe00 sp=0xc0000dfd80 pc=0x55ec2f
+encoding/gob.(*Decoder).Decode(0xc00016c000, {0x637000?, 0xc00011c0f0?})
+	/home/kevin/.gvm/gos/go1.20.6/src/encoding/gob/decoder.go:204 +0x165 fp=0xc0000dfe58 sp=0xc0000dfe00 pc=0x55ea45
+net/rpc.(*gobClientCodec).ReadResponseHeader(0x64ca00?, 0x639580?)
+	/home/kevin/.gvm/gos/go1.20.6/src/net/rpc/client.go:228 +0x27 fp=0xc0000dfe80 sp=0xc0000dfe58 pc=0x601f27
+net/rpc.(*Client).input(0xc00009e660)
+	/home/kevin/.gvm/gos/go1.20.6/src/net/rpc/client.go:109 +0xb4 fp=0xc0000dffc8 sp=0xc0000dfe80 pc=0x6011b4
+net/rpc.NewClientWithCodec.func1()
+	/home/kevin/.gvm/gos/go1.20.6/src/net/rpc/client.go:206 +0x26 fp=0xc0000dffe0 sp=0xc0000dffc8 pc=0x601de6
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc0000dffe8 sp=0xc0000dffe0 pc=0x481c41
+created by net/rpc.NewClientWithCodec
+	/home/kevin/.gvm/gos/go1.20.6/src/net/rpc/client.go:206 +0xc5
+
+goroutine 28 [runnable]:
+runtime.selectgo(0xc00035cfa0?, 0xc00035ce6c?, 0x0?, 0x0?, 0x3?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/select.go:121 +0x1525 fp=0xc00035cda0 sp=0xc00035cd98 pc=0x461145
+uk.ac.bris.cs/gameoflife/gol.distributor.func1()
+	/home/kevin/Extensions/CSA-Game-of-Life/distributed/gol/distributor.go:71 +0x15d fp=0xc00035cfe0 sp=0xc00035cda0 pc=0x60545d
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc00035cfe8 sp=0xc00035cfe0 pc=0x481c41
+created by uk.ac.bris.cs/gameoflife/gol.distributor
+	/home/kevin/Extensions/CSA-Game-of-Life/distributed/gol/distributor.go:69 +0x90b
+
+goroutine 16 [IO wait, 9 minutes]:
+runtime.gopark(0x18?, 0xb?, 0x0?, 0x0?, 0x7?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/proc.go:381 +0xd6 fp=0xc0000d9a68 sp=0xc0000d9a48 pc=0x44fd96
+runtime.netpollblock(0x48cde5?, 0x419a0f?, 0x0?)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/netpoll.go:527 +0xf7 fp=0xc0000d9aa0 sp=0xc0000d9a68 pc=0x448457
+internal/poll.runtime_pollWait(0x7fb33006feb8, 0x72)
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/netpoll.go:306 +0x89 fp=0xc0000d9ac0 sp=0xc0000d9aa0 pc=0x47c6a9
+internal/poll.(*pollDesc).wait(0xc00016c200?, 0xc000001000?, 0x0)
+	/home/kevin/.gvm/gos/go1.20.6/src/internal/poll/fd_poll_runtime.go:84 +0x32 fp=0xc0000d9ae8 sp=0xc0000d9ac0 pc=0x4a9572
+internal/poll.(*pollDesc).waitRead(...)
+	/home/kevin/.gvm/gos/go1.20.6/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc00016c200, {0xc000001000, 0x1000, 0x1000})
+	/home/kevin/.gvm/gos/go1.20.6/src/internal/poll/fd_unix.go:167 +0x299 fp=0xc0000d9b80 sp=0xc0000d9ae8 pc=0x4aa0d9
+net.(*netFD).Read(0xc00016c200, {0xc000001000?, 0x63a4c0?, 0xc000494398?})
+	/home/kevin/.gvm/gos/go1.20.6/src/net/fd_posix.go:55 +0x29 fp=0xc0000d9bc8 sp=0xc0000d9b80 pc=0x58b269
+net.(*conn).Read(0xc000114018, {0xc000001000?, 0xc000494360?, 0xc0000d9c80?})
+	/home/kevin/.gvm/gos/go1.20.6/src/net/net.go:183 +0x45 fp=0xc0000d9c10 sp=0xc0000d9bc8 pc=0x596025
+net.(*TCPConn).Read(0xc00012e160?, {0xc000001000?, 0x676f80?, 0xc000494360?})
+	<autogenerated>:1 +0x29 fp=0xc0000d9c40 sp=0xc0000d9c10 pc=0x5a0ca9
+bufio.(*Reader).Read(0xc0001221e0, {0xc000110070, 0x1, 0xc0000d9d70?})
+	/home/kevin/.gvm/gos/go1.20.6/src/bufio/bufio.go:237 +0x1bb fp=0xc0000d9c78 sp=0xc0000d9c40 pc=0x50737b
+io.ReadAtLeast({0x6f9e80, 0xc0001221e0}, {0xc000110070, 0x1, 0x9}, 0x1)
+	/home/kevin/.gvm/gos/go1.20.6/src/io/io.go:332 +0x9a fp=0xc0000d9cc0 sp=0xc0000d9c78 pc=0x4a617a
+io.ReadFull(...)
+	/home/kevin/.gvm/gos/go1.20.6/src/io/io.go:351
+encoding/gob.decodeUintReader({0x6f9e80?, 0xc0001221e0?}, {0xc000110070?, 0x9?, 0x9?})
+	/home/kevin/.gvm/gos/go1.20.6/src/encoding/gob/decode.go:116 +0x57 fp=0xc0000d9d18 sp=0xc0000d9cc0 pc=0x554837
+encoding/gob.(*Decoder).recvMessage(0xc000180100)
+	/home/kevin/.gvm/gos/go1.20.6/src/encoding/gob/decoder.go:82 +0x39 fp=0xc0000d9d50 sp=0xc0000d9d18 pc=0x55e3f9
+encoding/gob.(*Decoder).decodeTypeSequence(0xc000180100, 0x0)
+	/home/kevin/.gvm/gos/go1.20.6/src/encoding/gob/decoder.go:148 +0x4f fp=0xc0000d9d80 sp=0xc0000d9d50 pc=0x55e78f
+encoding/gob.(*Decoder).DecodeValue(0xc000180100, {0x637000?, 0xc00011c360?, 0x7fb33011b9a8?})
+	/home/kevin/.gvm/gos/go1.20.6/src/encoding/gob/decoder.go:227 +0x18f fp=0xc0000d9e00 sp=0xc0000d9d80 pc=0x55ec2f
+encoding/gob.(*Decoder).Decode(0xc000180100, {0x637000?, 0xc00011c360?})
+	/home/kevin/.gvm/gos/go1.20.6/src/encoding/gob/decoder.go:204 +0x165 fp=0xc0000d9e58 sp=0xc0000d9e00 pc=0x55ea45
+net/rpc.(*gobClientCodec).ReadResponseHeader(0x64ca00?, 0x639600?)
+	/home/kevin/.gvm/gos/go1.20.6/src/net/rpc/client.go:228 +0x27 fp=0xc0000d9e80 sp=0xc0000d9e58 pc=0x601f27
+net/rpc.(*Client).input(0xc0001222a0)
+	/home/kevin/.gvm/gos/go1.20.6/src/net/rpc/client.go:109 +0xb4 fp=0xc0000d9fc8 sp=0xc0000d9e80 pc=0x6011b4
+net/rpc.NewClientWithCodec.func1()
+	/home/kevin/.gvm/gos/go1.20.6/src/net/rpc/client.go:206 +0x26 fp=0xc0000d9fe0 sp=0xc0000d9fc8 pc=0x601de6
+runtime.goexit()
+	/home/kevin/.gvm/gos/go1.20.6/src/runtime/asm_amd64.s:1598 +0x1 fp=0xc0000d9fe8 sp=0xc0000d9fe0 pc=0x481c41
+created by net/rpc.NewClientWithCodec
+	/home/kevin/.gvm/gos/go1.20.6/src/net/rpc/client.go:206 +0xc5
+
+rax    0xca
+rbx    0x0
+rcx    0x483b23
+rdx    0x0
+rdi    0x87d0e8
+rsi    0x80
+rbp    0x7ffe233c12a0
+rsp    0x7ffe233c1258
+r8     0x0
+r9     0x0
+r10    0x0
+r11    0x286
+r12    0x456740
+r13    0x2c
+r14    0x87c9c0
+r15    0x1
+rip    0x483b21
+rflags 0x286
+cs     0x33
+fs     0x0
+gs     0x0
+*** Test killed with quit: ran too long (11m0s).
+exit status 2
+FAIL	uk.ac.bris.cs/gameoflife	660.006s
